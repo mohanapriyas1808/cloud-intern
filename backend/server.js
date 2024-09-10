@@ -14,7 +14,7 @@ const db = mysql.createConnection({
   host: process.env.DB_HOST || "mysql",
   user: process.env.DB_USER || "root",
   password: process.env.DB_PASSWORD || "rootpassword",
-  database: process.env.DB_NAME || "studentDB"
+  database: process.env.DB_NAME || "userdb"
 });
 
 // Connect to MySQL with retry logic
