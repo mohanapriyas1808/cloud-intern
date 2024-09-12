@@ -11,10 +11,10 @@ app.use(express.json());
 
 // Create MySQL connection
 const db = mysql.createConnection({
-  host: process.env.DB_HOST || "mysql",
-  user: process.env.DB_USER || "root",
-  password: process.env.DB_PASSWORD || "rootpassword",
-  database: process.env.DB_NAME || "userdb"
+  host: "mysql",
+  user: "root",             
+  password: "rootpassword",  
+  database: "school_db"      // Changed database name to 'school_db'
 });
 
 // Connect to MySQL with retry logic
@@ -43,7 +43,9 @@ handleDisconnect();
 // API endpoint to handle student data submission
 app.post("/api/students", (req, res) => {
   const { name, subject, marks } = req.body;
-  const query = "INSERT INTO students (name, subject, marks) VALUES (?, ?, ?)";
+  
+  // Change table name from 'students' to 'student_marks'
+  const query = "INSERT INTO student_marks (name, subject, marks) VALUES (?, ?, ?)";
 
   db.query(query, [name, subject, marks], (err, result) => {
     if (err) {
