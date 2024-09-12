@@ -14,7 +14,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://backend:5000/api/students", {
+      const response = await fetch("http://localhost:5000/api/students", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(student),
@@ -27,7 +27,7 @@ function App() {
         setMessage("Failed to save data.");
       }
     } catch (error) {
-      console.error("Error connecting to the server:", error); // Improved error logging
+      console.error("Error connecting to the server:", error);
       setMessage("Error connecting to the server.");
     }
   };
