@@ -1,13 +1,11 @@
-version: '3'
+version: '3.8'
 services:
   mysql:
     image: mysql:5.7
     container_name: mysql
     environment:
-      MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: userdb
-      MYSQL_USER: user
-      MYSQL_PASSWORD: userpassword
+      MYSQL_ROOT_PASSWORD: rootpassword  # Use this single password
+      MYSQL_DATABASE: school_db          # Updated database name
     ports:
       - "3306:3306"
     volumes:
@@ -18,11 +16,6 @@ services:
   backend:
     build: ./backend
     container_name: backend
-    environment:
-      DB_HOST: mysql
-      DB_USER: user
-      DB_PASSWORD: userpassword
-      DB_NAME: userdb
     ports:
       - "5000:5000"
     depends_on:
