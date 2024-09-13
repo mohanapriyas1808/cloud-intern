@@ -6,12 +6,12 @@ The application is containerized using Docker for easy deployment and management
 
 /your-project-root
 │
-├── /backend              # Contains backend Node.js app
-│   ├── Dockerfile        # Dockerfile for backend
-│   └── server.js         # Your Node.js server
+├── /backend              
+│   ├── Dockerfile        
+│   └── server.js        
 │
-├── /frontend             # Contains frontend React app
-│   ├── Dockerfile        # Dockerfile for frontend
+├── /frontend            
+│   ├── Dockerfile     
 │   └── package.json
 │
-├── docker-compose.yml    # The Docker Compose file
+├── docker-compose.yml    
