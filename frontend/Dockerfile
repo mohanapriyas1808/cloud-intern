@@ -25,5 +25,3 @@ COPY --from=build /usr/src/app/build /usr/share/nginx/html
 # Expose the port on which nginx will serve the React app
 EXPOSE 80
 
-# Use a custom Nginx configuration if needed
-# COPY nginx.conf /etc/nginx/nginx.conf
